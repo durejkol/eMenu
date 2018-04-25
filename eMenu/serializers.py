@@ -11,11 +11,13 @@ class DishSerializer(serializers.Serializer):
     last_modified = serializers.DateTimeField()
     photo = serializers.ImageField()
     is_vegetarian = serializers.BooleanField()
-    menus = serializers.PrimaryKeyRelatedField(queryset = Menu.objects.all(), many = True)
+    menus = serializers.PrimaryKeyRelatedField(queryset = Menu.objects.all(),
+                                               many = True)
 
     class Meta:
         model = Dish
-        fields = ('id', 'name', 'description', 'preparation_time', 'is_vegetarian', 'photo', 'date_added', 'last_modified')
+        fields = ('id', 'name', 'description', 'preparation_time',
+                  'is_vegetarian', 'photo', 'date_added', 'last_modified')
 
 class MenuSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -27,4 +29,5 @@ class MenuSerializer(serializers.Serializer):
 
     class Meta:
         model = Menu
-        fields = ('id', 'name', 'description', 'dishes', 'dishes_count', 'date_added', 'last_modified')
+        fields = ('id', 'name', 'description', 'dishes', 'dishes_count',
+                  'date_added', 'last_modified')

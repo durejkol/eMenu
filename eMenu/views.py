@@ -12,7 +12,8 @@ class MenuViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows menus to be viewed
     """
-    queryset = Menu.objects.exclude(dishes = None).annotate(dishes_count = Count('dishes'))
+    queryset = Menu.objects.exclude(dishes = None).annotate(dishes_count =
+                                                            Count('dishes'))
     serializer_class = MenuSerializer
     http_method_names = ['get']
 
@@ -31,7 +32,8 @@ def MenuList(request):
     View that shows list of non-empty menus.
     Details data is taken from DRF endpoints, and shown as modal.
     """
-    menus = Menu.objects.exclude(dishes = None).annotate(dishes_count = Count('dishes'))
+    menus = Menu.objects.exclude(dishes = None).annotate(dishes_count =
+                                                         Count('dishes'))
     return render(request, 'menu_list_detail.html', {'menus': menus})
 
 
@@ -41,6 +43,7 @@ def insert_sample_data(request):
     and automatically add sample data (no photos included).
     Photos can be added via admin panel.
     Afterwards it redirects to MenuList view.
+    (had issues with manage.py dumpdata and manage.py loaddata :) )
     """
     
     Dish.objects.all().delete()
@@ -77,7 +80,6 @@ def insert_sample_data(request):
     m14.save()
     m15 = Menu(name = "Menu numer 15", description = "Opis menu numer 15")
     m15.save()
-
 
     d1 = Dish(name = 'Spaghetti', 
               description = 'Makaron z sosem i mięsem mielonym',

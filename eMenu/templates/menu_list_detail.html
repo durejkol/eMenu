@@ -83,7 +83,7 @@
                 success: function (result) {
                     $("#results").modal('show');
                     $("#menuName").text(result.name);
-                    $("#menuDescription").text("Opis: " + result.description);
+                    $("#menuDescription").text(result.description);
                     $.each(result.dishes, function (index, dish) {
                         var vegetarian_logo = ""
                         if (dish.is_vegetarian) { vegetarian_logo = "<img src='"+"{% static 'eMenu/leaf.svg' %}"+"' style='width:1em; height:1em;'>"; }
