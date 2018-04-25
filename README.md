@@ -21,7 +21,7 @@ python manage.py createsuperuser
 
 * Run development server:
 ``` 
-python manage.py createsuperuser 
+python manage.py runserver 
 ```
 * Insert initial data:
 Access http://127.0.0.1:8000/insert_sample_data through browser 
