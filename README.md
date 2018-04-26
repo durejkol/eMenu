@@ -18,18 +18,14 @@ pip install -r requirements.txt
 ``` 
 python manage.py createsuperuser 
 ```
-
-* Initial data:
-``` 
-./manage.py loaddata db.json
-```
-
 * Run development server:
 ``` 
 python manage.py runserver 
 ```
-
-
+* Initial data (not necessery when using db.slite3):
+``` 
+./manage.py loaddata db.json
+```
 
 
 ## Running the tests
@@ -47,6 +43,6 @@ python manage.py runserver
 * Datatables 
 
 
-## Authors
+## Author
 
 * **Łukasz Durejko**
