@@ -22,7 +22,7 @@ python manage.py createsuperuser
 ``` 
 python manage.py runserver 
 ```
-* Initial data (not necessery when using db.slite3):
+* Initial data (not necessery when using sqlite3):
 ``` 
 ./manage.py loaddata db.json
 ```
