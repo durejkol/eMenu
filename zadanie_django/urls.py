@@ -13,8 +13,7 @@ router.register(r'dishes', views.DishesViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', views.MenuList),
-    path('insert_sample_data', views.insert_sample_data)
+    path('', views.MenuList)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

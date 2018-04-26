@@ -19,12 +19,17 @@ pip install -r requirements.txt
 python manage.py createsuperuser 
 ```
 
+* Initial data:
+``` 
+./manage.py loaddata db.json
+```
+
 * Run development server:
 ``` 
 python manage.py runserver 
 ```
-* Insert initial data:
-Access http://127.0.0.1:8000/insert_sample_data through browser 
+
+
 
 
 ## Running the tests
